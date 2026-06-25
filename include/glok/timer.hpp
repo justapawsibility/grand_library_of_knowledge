@@ -12,7 +12,7 @@ struct Timer {
     fn();
     auto end = high_resolution_clock::now();
 
-    duration<double> duration = end - start;
-    cout << "Result: " << duration.count() << " seconds" << endl;
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << "Result: " << duration.count() << "ms" << endl;
   }
 };
